@@ -177,4 +177,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //zmiana dark/light
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('atlas-theme');
+
+    const lightIconPath = 'assets/icons/dark-mode.svg';
+    const darkIconPath = 'assets/icons/light-mode.svg';
+
+    const updateIcon = (theme) => {
+        if (themeToggleBtn) {
+            const iconPath = theme === 'dark' ? lightIconPath : darkIconPath;
+            themeToggleBtn.innerHTML = `<img src="${iconPath}" alt="Przełącz motyw" class="theme-icon">`;
+        }
+    };
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+    } else {
+        updateIcon('light');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let targetTheme = theme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('atlas-theme', targetTheme);
+            
+            updateIcon(targetTheme);
+        });
+    }
+
 });

@@ -5,11 +5,15 @@
     --primary-light: #2d6a4f;
     --accent-color: #d8f3dc;
     
-    --bg-light: #e0e0d7;
+    --bg-light: #d8d8cf;
     --bg-white: #ffffff;
     --text-dark: #222222;
     --text-light: #ffffff;
     --text-muted: #555555;
+
+    --heading-color: #0f291e;       
+    --card-title-color: #1b4332;     
+    --filter-border-color: #1b4332; 
 }
 
 /*reset css*/
@@ -33,7 +37,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: 'Merriweather', serif;
-    color: var(--primary-dark);
+    color: var(--heading-color);
     margin-bottom: 1rem;
 }
 
@@ -180,8 +184,8 @@ section {
 
 .filter-btn {
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--filter-border-color);
+    color: var(--filter-border-color);
     padding: 8px 18px;
     border-radius: 20px;
     font-weight: 600;
@@ -191,8 +195,8 @@ section {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 /*karty atlasu*/
@@ -230,7 +234,7 @@ section {
 .card-content h2 {
     font-size: 1.3rem;
     margin-bottom: 5px;
-    color: var(--primary-color);
+    color: var(--card-title-color);
 }
 
 .latin-name {
@@ -380,8 +384,17 @@ section {
     justify-content: center;
 }
 
-.modal-info h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 5px; }
-.modal-info p { font-size: 1.05rem; line-height: 1.8; color: var(--text-dark); margin-top: 15px; }
+.modal-info h2 { 
+    font-size: 2.2rem; 
+    color: var(--card-title-color); 
+    margin-bottom: 5px; 
+}
+.modal-info p { 
+    font-size: 1.05rem; 
+    line-height: 1.8; 
+    color: var(--heading-color); 
+    margin-top: 15px; 
+}
 
 @media (max-width: 768px) {
     .modal-body { flex-direction: column; }
@@ -423,7 +436,7 @@ section {
 .form-group label {
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--primary-dark);
+    color: var(--heading-color);
 }
 
 .form-group input,
@@ -431,10 +444,11 @@ section {
 .form-group textarea {
     font-family: 'Inter', sans-serif;
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--text-muted);
     border-radius: 8px;
     font-size: 1rem;
-    background-color: #fcfcfc;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
     transition: all 0.3s ease;
 }
 
@@ -444,7 +458,7 @@ section {
     outline: none;
     border-color: var(--primary-light);
     background-color: var(--bg-white);
-    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1); 
+
 }
 
 .form-group input.input-error,
@@ -483,4 +497,47 @@ section {
     .contact-form-container {
         padding: 25px 15px;
     }
+}
+
+/*tryb ciemny*/
+[data-theme="dark"] {
+    /* Ciemne tła */
+    --primary-dark: #07120d;       
+    --primary-color: #11291e;        
+    --primary-light: #1b4332;       
+    --accent-color: #74c69d;         
+    
+    --bg-light: #121614;             
+    --bg-white: #1b241f;             
+    
+    --text-dark: #e8ecea;            
+    --text-light: #ffffff;
+    --text-muted: #a4b3a9;           
+    
+    --heading-color: #d8f3dc;        
+    --card-title-color: #74c69d;      
+    --filter-border-color: #74c69d;  
+}
+
+.theme-toggle-btn {
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    margin-left: 20px; 
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.theme-toggle-btn:hover { 
+    transform: scale(1.15); 
+}
+
+.theme-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    filter: invert(1)
 }
