@@ -5,7 +5,7 @@ Projekt z przedmiotu Aplikacje internetowe. Aplikacja to responsywny, interaktyw
 
 ## Github pages
 Projekt jest opublikowany i dostępny pod adresem: 
-
+https://hubert0011.github.io/Projekt_atlas_Aplikacje_Internetowe/index.html
 
 ## Funckjonalności
 - **Katalog Flory i Fauny**: Baza kilkudziesięci gatunków roślin/grzybów i kilkunastu gatunków zwierząt (dane oddzielone od logiki w `data.js`).
