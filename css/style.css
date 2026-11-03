@@ -5,7 +5,7 @@
     --primary-light: #2d6a4f;
     --accent-color: #d8f3dc;
     
-    --bg-light: #dcdcbe;
+    --bg-light: #e0e0d7;
     --bg-white: #ffffff;
     --text-dark: #222222;
     --text-light: #ffffff;
@@ -389,4 +389,98 @@ section {
     .modal-images img { width: 50%; max-height: 200px; }
     .modal-images img:only-of-type { width: 100%; } 
     .modal-info { width: 100%; padding: 20px; }
+}
+
+
+
+/*strona kontaktowa*/
+.contact-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.contact-form-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: 'Inter', sans-serif;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1); 
+}
+
+.form-group input.input-error,
+.form-group select.input-error,
+.form-group textarea.input-error {
+    border-color: #d63031;
+}
+
+.error-msg {
+    color: #d63031;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-status.success {
+    background-color: #d8f3dc;
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-light);
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 25px 15px;
+    }
 }
